@@ -275,7 +275,7 @@ def make_vlass_cutout(ra_deg, dec_deg, fov, raw_image_name, image_name,
         new_hdr['BMIN'] = hdr['BMIN']
         new_hdr['BMAJ'] = hdr['BMAJ']
 
-        filename = image_folder_path + image_name + ':' + raw_image_name + '.fits'
+        filename = image_folder_path + image_name + ':' + raw_image_name
 
         if verbosity > 1:
             print("[INFO] Cutout with a FOV of {} generated.".format(fov))
