@@ -1,17 +1,37 @@
 import pandas as pd
 # from qso_toolbox import catalog_tools as ct
 import catalog_tools as ct # temp means special requirements in notes 1/2
+import argparse
 
+parser = argparse.ArgumentParser()
+                                 
+# Add an argument for the 'ra' variant
+parser.add_argument('-ra_name', type=str, help='name of the RA column in the file')
+parser.add_argument('-dec_name', type=str, help='name of the dec column in the file')
+parser.add_argument('-source_name', type=str, help='name of the Source Name column in the file')
+parser.add_argument('-img_path', type=str, help='img saving path')
+parser.add_argument('-csv_path', type=str, help='csv file path')
+
+# Parse the command-line arguments
+args = parser.parse_args()
+
+# Access the value of the 'ra' variant
+ra_name = args.ra_name
+dec_name = args.dec_name
+source_name = args.source_name
+img_path = args.img_path
+csv_path = args.csv_path
+    
 # Input File (only csv here)
 # Input File (only csv here)
-catalog_filename = '/Users/xie/WORKSPACE/skymapper/csv/v2MSAcat_J0218p0007_fillers_weigthed.csv'
+catalog_filename = csv_path
 
 # Image path to save
-image_path = '/Users/xie/WORKSPACE/skymapper/final_imgs/try'
+image_path = img_path
 # Coordinate column names, either string or list of strings with length N
-ra_column_name = 'ra'
-dec_column_name = 'dec'
-object_column_name='sourceID' # if no obj name provided, set it to None
+ra_column_name = ra_name
+dec_column_name = dec_name
+object_column_name=source_name # if no obj name provided, set it to None
 # object_column_name = 'name_short' # user provided names
 # List of surveys, list with length N
 # surveys = ['ps1', 'ps1', 'ps1', 'ps1', 'ps1', \
