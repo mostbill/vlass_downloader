@@ -1130,15 +1130,23 @@ def get_photometry(table, ra_col_name, dec_col_name, object_col_name, surveys, b
                 # raw_img_name = table.temp_object_name[idx] + "_" + survey + \
                 #               "_" + band + '_raw'
                 
-                try:
-                    url, epoch, raw_img_name_list = vlass_quicklook.get_quicklook_url(ra, dec,
-                                    mode='all',
-                                    update_summary='auto',
-                                    verbosity=verbosity)
-                    if url == None:
-                        print("No VLASS image found!")
-                        continue
-                except:
+                # try:
+                #     url, epoch, raw_img_name_list = vlass_quicklook.get_quicklook_url(ra, dec,
+                #                     mode='all',
+                #                     update_summary='auto',
+                #                     verbosity=verbosity)
+                #     if url == None:
+                #         print("No VLASS image found!")
+                #         continue
+                # except:
+                #     print("No VLASS image found!")
+                #     continue
+                
+                url, epoch, raw_img_name_list = vlass_quicklook.get_quicklook_url(ra, dec,
+                                mode='all',
+                                update_summary='auto',
+                                verbosity=verbosity)
+                if url == None:
                     print("No VLASS image found!")
                     continue
 
