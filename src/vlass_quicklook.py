@@ -43,14 +43,16 @@ def get_tile_dataframe():
         linedata = np.array([val.strip() for val in linedata])
 
         if len(linedata) == 9:
-            df = pd.concat([df, {'name': linedata[0],
+            dic = {'name': linedata[0],
                            'dec_min': float(linedata[1]),
                            'dec_max': float(linedata[2]),
                            'ra_min': float(linedata[3]),
                            'ra_max': float(linedata[4]),
                            'obsdate': linedata[6],
                            'epoch': linedata[5],
-                           }], ignore_index=True)
+                           }
+            d = pd.DataFrame(data=dic)
+            df = pd.concat([df, d], ignore_index=True)
 
     df.to_hdf('vlass_quicklook_summary.hdf5','data')
 
