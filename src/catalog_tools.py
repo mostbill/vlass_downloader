@@ -23,8 +23,6 @@ from astroquery.sdss import SDSS
 
 from IPython import embed
 
-from dl import queryClient as qc
-
 try:
   from urllib2 import urlopen #python2
   from httplib import IncompleteRead
