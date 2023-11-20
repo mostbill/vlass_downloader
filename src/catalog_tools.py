@@ -226,7 +226,7 @@ def convert_urltable_to_pandas(data, sep=',', header=0, skip_header=1,
 
         for dat in data_string[skip_header:-skip_footer]:
 
-            df = df.concact(pd.Series(dat.split(sep),
+            df = df.concat(pd.Series(dat.split(sep),
                                      index=data_string[0].split(sep)),
                            ignore_index=True)
 
@@ -432,7 +432,7 @@ def get_offset_stars_astroquery(df, target_name_column, target_ra_column,
                           quality_query=quality_query, n=n, verbosity=verbosity)
 
 
-        offset_df = offset_df.concact(temp_df, ignore_index=True)
+        offset_df = offset_df.concat(temp_df, ignore_index=True)
 
         offset_df.to_csv('temp_offset_df.csv', index=False)
 
@@ -483,7 +483,7 @@ def get_offset_stars_datalab(df, target_name_column, target_ra_column,
                                      where=where, n=n,
                                      verbosity=verbosity)
 
-        offset_df = offset_df.concact(temp_df, ignore_index=True)
+        offset_df = offset_df.concat(temp_df, ignore_index=True)
 
         offset_df.to_csv('temp_offset_df.csv', index=False)
 
@@ -870,7 +870,7 @@ def get_offset_stars_ps1(df, target_name_column, target_ra_column,
                                       verbosity=verbosity)
 
 
-        offset_df = offset_df.concact(temp_df, ignore_index=True)
+        offset_df = offset_df.concat(temp_df, ignore_index=True)
 
         offset_df.to_csv('temp_offset_df.csv', index=False)
 
