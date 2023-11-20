@@ -43,7 +43,7 @@ def get_tile_dataframe():
         linedata = np.array([val.strip() for val in linedata])
 
         if len(linedata) == 9:
-            df = df.append({'name': linedata[0],
+            df = df.concact({'name': linedata[0],
                            'dec_min': float(linedata[1]),
                            'dec_max': float(linedata[2]),
                            'ra_min': float(linedata[3]),
