@@ -51,8 +51,8 @@ def get_tile_dataframe():
                            'obsdate': linedata[6],
                            'epoch': linedata[5],
                            }
-            #dct = {k:[v] for k,v in dct.items()}
-            d = pd.DataFrame(dic)
+            dct = {k:[v] for k,v in dct.items()}
+            d = pd.DataFrame(data=dic)
             df = pd.concat([df, d], ignore_index=True)
 
     df.to_hdf('vlass_quicklook_summary.hdf5','data')
