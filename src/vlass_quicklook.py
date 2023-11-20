@@ -3,7 +3,6 @@
 import os
 import time
 import requests
-import regex as re
 import numpy as np
 import pandas as pd
 
@@ -24,8 +23,8 @@ except ImportError:
   from urllib.error import HTTPError
   from http.client import IncompleteRead
 
-from qso_toolbox import utils as ut
-from qso_toolbox import catalog_tools as ct
+import utils as ut
+import catalog_tools as ct
 
 def get_tile_dataframe():
 
