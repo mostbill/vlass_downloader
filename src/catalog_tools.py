@@ -1237,16 +1237,23 @@ def get_photometry(table, ra_col_name, dec_col_name, object_col_name, surveys, b
                                                                     verbosity=verbosity)
                         else:     
                             # single epoch source 
-                            try:
-                                vlass_img_name_temp=vlass_img_name+'_'+'vlass_' + str(band) + '_fov' + str(fov)
-                                vlass_quicklook.make_vlass_cutout(ra, dec, fov,
-                                                                raw_img_name,
-                                                                vlass_img_name,
-                                                                image_folder_path=
-                                                                image_folder_path,
-                                                                verbosity=verbosity)
-                            except:
-                                pass
+                            # try:
+                            #     vlass_img_name_temp=vlass_img_name+'_'+'vlass_' + str(band) + '_fov' + str(fov)
+                            #     vlass_quicklook.make_vlass_cutout(ra, dec, fov,
+                            #                                     raw_img_name,
+                            #                                     vlass_img_name,
+                            #                                     image_folder_path=
+                            #                                     image_folder_path,
+                            #                                     verbosity=verbosity)
+                            # except:
+                            #     pass
+                            vlass_img_name_temp=vlass_img_name+'_'+'vlass_' + str(band) + '_fov' + str(fov)
+                            vlass_quicklook.make_vlass_cutout(ra, dec, fov,
+                                                            raw_img_name,
+                                                            vlass_img_name,
+                                                            image_folder_path=
+                                                            image_folder_path,
+                                                            verbosity=verbosity)
                         #delete raw vlass subtile image
                         #print(raw_img_name)
                         #os.system('rm ' + image_folder_path +  '*raw*')
