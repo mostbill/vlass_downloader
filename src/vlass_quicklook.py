@@ -154,7 +154,7 @@ def get_closest_subtile_url(tile, coord, verbosity=0):
 
         dist = coord.separation(subtile_coords)
         #here might be wrong, if you got subtiles missed in downloading
-        subtile_name = subtile_df.loc[subtile_df.index[dist.value<((3**2)*2)**0.5], 'Name'] #0.6 is the half length of the square
+        subtile_name = subtile_df.loc[subtile_df.index[dist.value<((1**2)*2)**0.5], 'Name'] #0.6 is the half length of the square
         
         #embed()
 
