@@ -247,7 +247,7 @@ def make_vlass_cutout(ra_deg, dec_deg, fov, raw_image_name, image_name,
 
     pixcrd = wcs_img.wcs_world2pix([[ra_deg, dec_deg, 0, 0]], 0)
 
-    positions = (np.float(pixcrd[0, 0]), np.float(pixcrd[0, 1]))
+    positions = (float(pixcrd[0, 0]), float(pixcrd[0, 1]))
     overlap = True
 
     if verbosity >= 4:
