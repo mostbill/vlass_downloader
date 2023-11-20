@@ -348,15 +348,20 @@ def download_vlass_images(ra, dec, fov, image_folder_path,
             if verbosity > 1:
                 print('[INFO] Generating VLASS cutout image.')
 
-            try:
-                make_vlass_cutout(ra, dec, fov, raw_img_name,
-                                vlass_img_name,
-                                image_folder_path=
-                                image_folder_path,
-                                verbosity=verbosity)
-            except:
-                continue
+            # try:
+            #     make_vlass_cutout(ra, dec, fov, raw_img_name,
+            #                     vlass_img_name,
+            #                     image_folder_path=
+            #                     image_folder_path,
+            #                     verbosity=verbosity)
+            # except:
+            #     continue
                 
+            make_vlass_cutout(ra, dec, fov, raw_img_name,
+                            vlass_img_name,
+                            image_folder_path=
+                            image_folder_path,
+                            verbosity=verbosity)
 
         else:
             if verbosity > 1:
