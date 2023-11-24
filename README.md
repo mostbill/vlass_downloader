@@ -11,4 +11,4 @@ python imview.py -ra raj2000 -dec dej2000 -source_name name -img_path /your/path
 ```
 
 # Disclaimer
-This code is now heavily based on qso_toolbox by J.-T. Schindler
+This code is now heavily based on Eduardo Banados's code and utilities of qso_toolbox by J.-T. Schindler.
