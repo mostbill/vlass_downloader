@@ -11,6 +11,7 @@ parser.add_argument('-dec_name', type=str, help='name of the dec column in the f
 parser.add_argument('-source_name', type=str, help='name of the Source Name column in the file')
 parser.add_argument('-img_path', type=str, help='img saving path')
 parser.add_argument('-csv_path', type=str, help='csv file path')
+parser.add_argument('-fov', type=str, help='size (in arcseconds) of the cutout image')
 
 # Parse the command-line arguments
 args = parser.parse_args()
@@ -21,6 +22,7 @@ dec_name = args.dec_name
 source_name = args.source_name
 img_path = args.img_path
 csv_path = args.csv_path
+fov=args.fov
     
 # Input File (only csv here)
 # Input File (only csv here)
@@ -53,7 +55,8 @@ bands=['3GHz']
 # List of survey bands, list with length N
 
 # List of field of views for downloading the images
-fovs = [120]*len(bands)
+fov=float(fov)
+fovs = [fov]*len(bands)
 
 #------------------------------------------------------------------------------
 # INPUT Keyword Arguments
