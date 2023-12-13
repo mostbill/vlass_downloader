@@ -55,7 +55,7 @@ bands=['3GHz']
 # List of survey bands, list with length N
 
 # List of field of views for downloading the images
-fov=float(fov)
+fov=int(fov)
 fovs = [fov]*len(bands)
 
 #------------------------------------------------------------------------------
